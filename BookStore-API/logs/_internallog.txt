@@ -1,0 +1,3 @@
+2020-05-28 15:35:18.0923 Trace Opening C:/Users/CJVN/source/repos/BookStore-API/BookStore-API/logs/2020-05-28_logfile.txt with allowFileSharedWriting=False
+2020-05-28 15:37:05.6927 Trace Opening C:/Users/CJVN/source/repos/BookStore-API/BookStore-API/logs/2020-05-28_logfile.txt with allowFileSharedWriting=False
+2020-05-28 15:37:51.6464 Trace Opening C:/Users/CJVN/source/repos/BookStore-API/BookStore-API/logs/2020-05-28_logfile.txt with allowFileSharedWriting=False
