@@ -17,6 +17,8 @@ using System.Reflection;
 using System.IO;
 using BookStore_API.Contracts;
 using BookStore_API.Services;
+using AutoMapper;
+using BookStore_API.Mappings;
 
 namespace BookStore_API
 {
@@ -48,6 +50,8 @@ namespace BookStore_API
                     .AllowAnyHeader()
                     );
             });
+
+            services.AddAutoMapper(typeof(Maps));
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { 
@@ -87,6 +91,7 @@ namespace BookStore_API
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Book Store API");
                 c.RoutePrefix = "";
             });
+
 
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
