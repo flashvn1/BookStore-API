@@ -1,0 +1,6 @@
+2020-05-31 05:59:44.7621 INFO Attempted Get All Authors
+2020-05-31 05:59:47.3475 INFO Successfully got all Authors
+2020-05-31 08:16:45.8037 INFO Author submission was atempted
+2020-05-31 08:16:48.0721 INFO Author created
+2020-05-31 08:16:59.7351 INFO Attempted Get All Authors
+2020-05-31 08:17:00.1035 INFO Successfully got all Authors

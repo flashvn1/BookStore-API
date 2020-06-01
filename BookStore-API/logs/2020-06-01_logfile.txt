@@ -1,0 +1,26 @@
+2020-06-01 03:59:28.7474 INFO Author updated with id: 2 was atempted
+2020-06-01 03:59:28.9943 ERROR Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AuthorUpdateDTO -> Author
+BookStore_API.DTO.AuthorUpdateDTO -> BookStore_API.Data.Author - 
+2020-06-01 04:02:58.6531 INFO Author submission was atempted
+2020-06-01 04:03:00.6435 INFO Author created
+2020-06-01 04:04:40.2775 INFO Author updated with id: 0 was atempted
+2020-06-01 04:04:40.3685 WARN Author Data Was Incomplete
+2020-06-01 04:11:06.5663 INFO Author updated with id: 2 was atempted
+2020-06-01 04:11:08.5044 INFO Author with id: 2  Updated
+2020-06-01 04:15:36.5753 INFO Attempted Get All Authors
+2020-06-01 04:15:38.6297 INFO Successfully got all Authors
+2020-06-01 04:16:41.0081 INFO Author submission was atempted
+2020-06-01 04:16:41.4558 INFO Author created
+2020-06-01 04:18:09.8434 INFO Attempted Get Author with id:1
+2020-06-01 04:18:10.1009 INFO Successfully got Author with id:1
+2020-06-01 04:18:38.1038 INFO Attempted Get Author with id:2
+2020-06-01 04:18:38.1669 INFO Successfully got Author with id:2
+2020-06-01 04:19:19.1495 INFO Attempted Get All Authors
+2020-06-01 04:19:19.2421 INFO Successfully got all Authors
+2020-06-01 04:30:23.5584 INFO Author delete with id: 4 was atempted
+2020-06-01 04:30:25.8422 INFO Author with id: 4  Deleted
+2020-06-01 04:31:26.8119 INFO Attempted Get All Authors
+2020-06-01 04:31:27.0281 INFO Successfully got all Authors
