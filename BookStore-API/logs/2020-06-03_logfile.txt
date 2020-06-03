@@ -1,0 +1,34 @@
+2020-06-03 07:16:29.1627 INFO Users-Login:Login attempt from user customer1
+2020-06-03 07:16:29.4159 INFO Users-Login: customer1 Not Authenticated
+2020-06-03 07:16:37.2851 INFO Users-Login:Login attempt from user customer1
+2020-06-03 07:16:37.3797 INFO Users-Login: customer1 Not Authenticated
+2020-06-03 12:12:04.1128 INFO Users-Login:Login attempt from user customer
+2020-06-03 12:12:04.5596 INFO Users-Login: customer Successfully Authenticated
+2020-06-03 12:12:08.3273 INFO Users-Login:Login attempt from user customer
+2020-06-03 12:12:08.4770 INFO Users-Login: customer Successfully Authenticated
+2020-06-03 12:12:10.8335 INFO Users-Login:Login attempt from user customer
+2020-06-03 12:12:10.8972 INFO Users-Login: customer Successfully Authenticated
+2020-06-03 15:43:02.3979 INFO Authors-GetAuthors: Attempted To Get All Data
+2020-06-03 15:43:02.7784 INFO Authors-GetAuthors: Successfully Got All Data
+2020-06-03 15:43:30.4338 INFO Authors-GetAuthor: Attempted With ID: 1
+2020-06-03 15:43:30.5699 INFO Authors-GetAuthor: Successfully Got Data With ID:1
+2020-06-03 15:44:13.0909 INFO Users-Login:Login attempt from user customer
+2020-06-03 15:44:13.5144 INFO Users-Login: customer Successfully Authenticated
+2020-06-03 15:45:32.9485 INFO Users-Login:Login attempt from user admin
+2020-06-03 15:45:33.1310 INFO Users-Login: admin Successfully Authenticated
+2020-06-03 15:45:43.4466 INFO Authors-Create: Create Was Atempted
+2020-06-03 15:45:43.9511 INFO Authors-Create: Data Created
+2020-06-03 15:45:43.9718 INFO Authors-Create: BookStore_API.Data.Author
+2020-06-03 15:55:45.6792 INFO Users-Login:Login attempt from user admin
+2020-06-03 15:55:46.1098 INFO Users-Login: admin Successfully Authenticated
+2020-06-03 15:56:22.2284 INFO Users-Login:Login attempt from user customer
+2020-06-03 15:56:22.4057 INFO Users-Login: customer Successfully Authenticated
+2020-06-03 15:56:34.6302 INFO Authors-Delete: With ID: 5 Was Attempted
+2020-06-03 15:56:35.1559 INFO Authors-Delete: With ID: 5  Deleted
+2020-06-03 16:00:35.0693 INFO Users-Login:Login attempt from user admin
+2020-06-03 16:00:35.8033 INFO Users-Login: admin Successfully Authenticated
+2020-06-03 16:00:45.7973 INFO Users-Login:Login attempt from user admin
+2020-06-03 16:00:45.9662 INFO Users-Login: admin Successfully Authenticated
+2020-06-03 16:00:56.6166 INFO Authors-Create: Create Was Atempted
+2020-06-03 16:00:57.0530 INFO Authors-Create: Data Created
+2020-06-03 16:00:57.0700 INFO Authors-Create: BookStore_API.Data.Author
