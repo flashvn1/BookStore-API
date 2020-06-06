@@ -10,7 +10,6 @@ namespace BookStore_API.Services
 {
     public class BookRepository : IBookRepository
     {
-
         private readonly ApplicationDbContext _db;
 
         public BookRepository(ApplicationDbContext db)
@@ -43,7 +42,8 @@ namespace BookStore_API.Services
 
         public async Task<bool> isExists(int id)
         {
-            return await _db.Books.AnyAsync(q => q.Id == id);
+            var isExists = await _db.Books.AnyAsync(q => q.Id == id);
+            return isExists;
         }
 
         public async Task<bool> Save()

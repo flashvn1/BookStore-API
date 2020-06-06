@@ -5,16 +5,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using AutoMapper.Configuration;
 using BookStore_API.Contracts;
-using BookStore_API.DTO;
+using BookStore_API.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace BookStore_API.Controllers
 {
@@ -26,52 +24,86 @@ namespace BookStore_API.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILoggerService _logger;
         private readonly IConfiguration _config;
-
-        public UsersController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, ILoggerService logger, IConfiguration config)
+        public UsersController(SignInManager<IdentityUser> signInManager,
+            UserManager<IdentityUser> userManager,
+            ILoggerService logger,
+            IConfiguration config)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _logger = logger;
             _config = config;
-            
         }
-
         /// <summary>
-        /// User Login Endpoint
+        /// USer Registration Endpoint
         /// </summary>
-        /// <param name="UserDTO"></param>
+        /// <param name="userDTO"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        [Route("register")]
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] UserDTO UserDTO)
+        public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
         {
             var location = GetControllerActionNames();
             try
             {
-                var username = UserDTO.Username;
-                var password = UserDTO.Password;
+                var username = userDTO.EmailAddress;
+                var password = userDTO.Password;
+                _logger.LogInfo($"{location}: Registration Attempt for {username} ");
+                var user = new IdentityUser { Email = username, UserName = username };
+                var result = await _userManager.CreateAsync(user, password);
 
-                _logger.LogInfo($"{location}:Login attempt from user {username}");
+                if (!result.Succeeded)
+                {
+                    foreach(var error in result.Errors)
+                    {
+                        _logger.LogError($"{location}: {error.Code} {error.Description}");
+                    }
+                    return InternalError($"{location}: {username} User Registration Attempt Failed");
+                }
+                await _userManager.AddToRoleAsync(user, "Customer");
+                return Created("login",new { result.Succeeded });
+            }
+            catch (Exception e)
+            {
+                return InternalError($"{location}: {e.Message} - {e.InnerException}");
+            }
+        }
+        /// <summary>
+        /// User Login Endpoint
+        /// </summary>
+        /// <param name="userDTO"></param>
+        /// <returns></returns>
+        [Route("login")]
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> Login([FromBody] UserDTO userDTO)
+        {
+            var location = GetControllerActionNames();
+            try
+            {
+                var username = userDTO.EmailAddress;
+                var password = userDTO.Password;
+                _logger.LogInfo($"{location}: Login Attempt from user {username} ");
                 var result = await _signInManager.PasswordSignInAsync(username, password, false, false);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInfo($"{location}: {username} Successfully Authenticated");
-                    var user = await _userManager.FindByNameAsync(username);
-                    var tokenString = await generateJSONWebToken(user);
+                    var user = await _userManager.FindByEmailAsync(username);
+                    _logger.LogInfo($"{location}: Generating Token");
+                    var tokenString = await GenerateJSONWebToken(user);
                     return Ok(new { token = tokenString });
                 }
                 _logger.LogInfo($"{location}: {username} Not Authenticated");
-                return Unauthorized(UserDTO);
+                return Unauthorized(userDTO);
             }
             catch (Exception e)
             {
-                return internalError($"{location}: {e.Message} - {e.InnerException}");
-            }          
-
+                return InternalError($"{location}: {e.Message} - {e.InnerException}");
+            }
         }
 
-        private async Task<string> generateJSONWebToken(IdentityUser user)
+        private async Task<string> GenerateJSONWebToken(IdentityUser user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -83,12 +115,14 @@ namespace BookStore_API.Controllers
             };
             var roles = await _userManager.GetRolesAsync(user);
             claims.AddRange(roles.Select(r => new Claim(ClaimsIdentity.DefaultRoleClaimType, r)));
-            var token = new JwtSecurityToken(
-                _config["Jwt:Issuer"],
-                _config["Jwt:Issuer"],
-                claims, null, expires:DateTime.Now.AddMinutes(1),
+
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"]
+                , _config["Jwt:Issuer"],
+                claims,
+                null,
+                expires: DateTime.Now.AddHours(5),
                 signingCredentials: credentials
-                );
+            );
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
@@ -97,12 +131,13 @@ namespace BookStore_API.Controllers
             var controller = ControllerContext.ActionDescriptor.ControllerName;
             var action = ControllerContext.ActionDescriptor.ActionName;
 
-            return $"{controller}-{action}";
+            return $"{controller} - {action}";
         }
-        private ObjectResult internalError(string message)
+
+        private ObjectResult InternalError(string message)
         {
             _logger.LogError(message);
-            return StatusCode(500, "Something went wrong. Please contact the administrator");
+            return StatusCode(500, "Something went wrong. Please contact the Administrator");
         }
     }
 }

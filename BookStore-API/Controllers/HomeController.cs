@@ -7,29 +7,27 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace BookStore_API.Controllers
 {
     /// <summary>
-    /// This is a test APi Controller
+    /// THis is a test API controller
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class HomeController : ControllerBase
     {
-
         private readonly ILoggerService _logger;
+
         public HomeController(ILoggerService logger)
         {
             _logger = logger;
         }
 
         /// <summary>
-        /// Get All Records
+        /// Gets Values 
         /// </summary>
         /// <returns></returns>
-        // GET: api/<HomeController>
+        // GET: api/Home
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -38,45 +36,32 @@ namespace BookStore_API.Controllers
         }
 
         /// <summary>
-        /// Get a Record by ID
+        /// Get a value
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        // GET api/<HomeController>/5
-        [HttpGet("{id}")]
+        // GET: api/Home/5
+        [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             _logger.LogDebug("Got A Value");
             return "value";
         }
 
-        /// <summary>
-        /// Create a New Record
-        /// </summary>
-        /// <param name="value"></param>
-        // POST api/<HomeController>
+        // POST: api/Home
         [HttpPost]
         public void Post([FromBody] string value)
         {
             _logger.LogError("This is an error");
         }
 
-        /// <summary>
-        /// Update a specific Record given an ID
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="value"></param>
-        // PUT api/<HomeController>/5
+        // PUT: api/Home/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        /// <summary>
-        /// Delete a specific Record given an ID
-        /// </summary>
-        /// <param name="id"></param>
-        // DELETE api/<HomeController>/5
+        // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

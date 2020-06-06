@@ -6,36 +6,48 @@ using System.Threading.Tasks;
 
 namespace BookStore_API.Data
 {
-    public static class SeedData
+    public static class SeedData 
     {
-
-        public async static Task seed(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public async static Task Seed(UserManager<IdentityUser> userManager, 
+            RoleManager<IdentityRole> roleManager)
         {
-            await seedRoles(roleManager);
-            await seedUsers(userManager);
+            await SeedRoles(roleManager);
+            await SeedUsers(userManager);
         }
-
-        private async static Task seedUsers(UserManager<IdentityUser> userManager)
-        { 
+        private async static Task SeedUsers(UserManager<IdentityUser> userManager)
+        {
             if(await userManager.FindByEmailAsync("admin@bookstore.com") == null)
             {
                 var user = new IdentityUser
                 {
-                    UserName = "admin",
+                    UserName = "admin@bookstore.com",
                     Email = "admin@bookstore.com"
                 };
                 var result = await userManager.CreateAsync(user, "P@ssword1");
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(user, "Administrator");
                 }
             }
-            if (await userManager.FindByEmailAsync("customer@bookstore.com") == null)
+            if (await userManager.FindByEmailAsync("customer1@gmail.com") == null)
             {
                 var user = new IdentityUser
                 {
-                    UserName = "customer",
-                    Email = "customer@bookstore.com"
+                    UserName = "customer1@bookstore.com",
+                    Email = "customer1@bookstore.com"
+                };
+                var result = await userManager.CreateAsync(user, "P@ssword1");
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(user, "Customer");
+                }
+            }
+            if (await userManager.FindByEmailAsync("customer2@gmail.com") == null)
+            {
+                var user = new IdentityUser
+                {
+                    UserName = "customer2@bookstore.com",
+                    Email = "customer2@bookstore.com"
                 };
                 var result = await userManager.CreateAsync(user, "P@ssword1");
                 if (result.Succeeded)
@@ -45,23 +57,24 @@ namespace BookStore_API.Data
             }
         }
 
-        private async static Task seedRoles(RoleManager<IdentityRole> roleManager)
-        { 
-            if(! await roleManager.RoleExistsAsync("Administrator"))
+        private async static Task SeedRoles(RoleManager<IdentityRole> roleManager)
+        {
+            if (!await roleManager.RoleExistsAsync("Administrator"))
             {
                 var role = new IdentityRole
                 {
                     Name = "Administrator"
                 };
-                var result = await roleManager.CreateAsync(role);
+                await roleManager.CreateAsync(role);
             }
+
             if (!await roleManager.RoleExistsAsync("Customer"))
             {
                 var role = new IdentityRole
                 {
                     Name = "Customer"
                 };
-                var result = await roleManager.CreateAsync(role);
+                await roleManager.CreateAsync(role);
             }
         }
     }

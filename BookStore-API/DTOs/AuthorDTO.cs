@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace BookStore_API.DTO
+namespace BookStore_API.DTOs
 {
     public class AuthorDTO
     {
@@ -13,6 +12,7 @@ namespace BookStore_API.DTO
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Bio { get; set; }
+
         public virtual IList<BookDTO> Books { get; set; }
     }
 
@@ -27,7 +27,6 @@ namespace BookStore_API.DTO
 
     public class AuthorUpdateDTO
     {
-        [Required]
         public int Id { get; set; }
         [Required]
         public string Firstname { get; set; }

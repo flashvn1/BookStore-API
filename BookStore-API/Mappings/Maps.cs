@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BookStore_API.Data;
-using BookStore_API.DTO;
+using BookStore_API.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

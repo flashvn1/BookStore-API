@@ -1,6 +1,0 @@
-2020-05-29 13:09:35.0007 INFO Attempted Get Author with id:5
-2020-05-29 13:09:37.0900 WARN Author with id:5 not found
-2020-05-29 13:09:50.8048 INFO Attempted Get Author with id:1
-2020-05-29 13:09:51.0691 INFO Successfully got Author with id:1
-2020-05-29 13:12:15.9291 INFO Attempted Get Author with id:1
-2020-05-29 13:16:06.8645 INFO Successfully got Author with id:1
