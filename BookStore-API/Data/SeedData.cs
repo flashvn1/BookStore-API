@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore_API.Data
 {
-    public static class SeedData 
+    public static class SeedData
     {
         public async static Task Seed(UserManager<IdentityUser> userManager, 
             RoleManager<IdentityRole> roleManager)
@@ -20,7 +20,7 @@ namespace BookStore_API.Data
             {
                 var user = new IdentityUser
                 {
-                    UserName = "admin@bookstore.com",
+                    UserName = "admin",
                     Email = "admin@bookstore.com"
                 };
                 var result = await userManager.CreateAsync(user, "P@ssword1");
@@ -33,8 +33,8 @@ namespace BookStore_API.Data
             {
                 var user = new IdentityUser
                 {
-                    UserName = "customer1@bookstore.com",
-                    Email = "customer1@bookstore.com"
+                    UserName = "customer1",
+                    Email = "customer1@gmail.com"
                 };
                 var result = await userManager.CreateAsync(user, "P@ssword1");
                 if (result.Succeeded)
@@ -46,8 +46,8 @@ namespace BookStore_API.Data
             {
                 var user = new IdentityUser
                 {
-                    UserName = "customer2@bookstore.com",
-                    Email = "customer2@bookstore.com"
+                    UserName = "customer2",
+                    Email = "customer2@gmail.com"
                 };
                 var result = await userManager.CreateAsync(user, "P@ssword1");
                 if (result.Succeeded)

@@ -1,7 +1,0 @@
-2020-06-06 11:30:58.2707 INFO Users - Register: Registration Attempt for cj@datanetics.co.za 
-2020-06-06 11:31:36.3104 INFO Users - Login: Login Attempt from user cj@datanetics.co.za 
-2020-06-06 11:31:36.5458 INFO Users - Login: cj@datanetics.co.za Successfully Authenticated
-2020-06-06 11:31:36.5659 INFO Users - Login: Generating Token
-2020-06-06 11:41:46.6352 INFO Users - Login: Login Attempt from user cj@datanetics.co.za 
-2020-06-06 11:41:46.9323 INFO Users - Login: cj@datanetics.co.za Successfully Authenticated
-2020-06-06 11:41:46.9505 INFO Users - Login: Generating Token
