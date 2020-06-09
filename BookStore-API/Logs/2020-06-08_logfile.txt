@@ -1,0 +1,73 @@
+2020-06-08 10:59:05.9937 INFO Users - Login: Login Attempt from user cj@datanetics.co.za 
+2020-06-08 10:59:06.3345 INFO Users - Login: cj@datanetics.co.za Successfully Authenticated
+2020-06-08 10:59:06.3631 INFO Users - Login: Generating Token
+2020-06-08 10:59:08.9572 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 10:59:09.1828 INFO Authors - GetAuthors: Successful
+2020-06-08 10:59:18.8783 INFO Authors - GetAuthor: Attempted Call for id: 1
+2020-06-08 10:59:19.0079 INFO Authors - GetAuthor: Successfully got record with id: 1
+2020-06-08 10:59:26.2842 INFO Authors - GetAuthor: Attempted Call for id: 1
+2020-06-08 10:59:26.3185 INFO Authors - GetAuthor: Successfully got record with id: 1
+2020-06-08 10:59:39.4975 INFO Authors - Update: Update Attempted on record with id: 1 
+2020-06-08 10:59:39.6131 INFO Authors - Update: Record with id: 1 successfully updated
+2020-06-08 10:59:39.6813 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 10:59:39.7029 INFO Authors - GetAuthors: Successful
+2020-06-08 10:59:59.3554 INFO Authors - GetAuthor: Attempted Call for id: 1
+2020-06-08 10:59:59.4253 INFO Authors - GetAuthor: Successfully got record with id: 1
+2020-06-08 11:00:02.9513 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:00:03.0350 INFO Books - GetBooks: Successful
+2020-06-08 11:00:45.8634 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:00:45.9112 INFO Authors - GetAuthors: Successful
+2020-06-08 11:00:47.9039 INFO Authors - GetAuthor: Attempted Call for id: 1
+2020-06-08 11:00:47.9391 INFO Authors - GetAuthor: Successfully got record with id: 1
+2020-06-08 11:00:52.7384 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:00:52.7797 INFO Books - GetBooks: Successful
+2020-06-08 11:00:57.0174 INFO Books - GetBook: Attempted Call for id: 3
+2020-06-08 11:00:57.0921 INFO Books - GetBook: Successfully got record with id: 3
+2020-06-08 11:00:57.1454 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:00:57.1671 INFO Authors - GetAuthors: Successful
+2020-06-08 11:01:04.3510 INFO Books - Update: Update Attempted on record with id: 3 
+2020-06-08 11:01:04.4415 INFO Books - Update: Record with id: 3 successfully updated
+2020-06-08 11:01:04.5212 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:01:04.5509 INFO Books - GetBooks: Successful
+2020-06-08 11:01:08.8400 INFO Books - GetBook: Attempted Call for id: 3
+2020-06-08 11:01:08.8953 INFO Books - GetBook: Successfully got record with id: 3
+2020-06-08 11:01:08.9450 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:01:08.9721 INFO Authors - GetAuthors: Successful
+2020-06-08 11:01:21.6421 INFO Books - Update: Update Attempted on record with id: 3 
+2020-06-08 11:01:21.7237 INFO Books - Update: Record with id: 3 successfully updated
+2020-06-08 11:01:21.8440 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:01:21.8838 INFO Books - GetBooks: Successful
+2020-06-08 11:01:26.7483 INFO Books - GetBook: Attempted Call for id: 3
+2020-06-08 11:01:26.7992 INFO Books - GetBook: Successfully got record with id: 3
+2020-06-08 11:01:26.8581 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:01:26.9078 INFO Authors - GetAuthors: Successful
+2020-06-08 11:01:34.2914 INFO Books - Update: Update Attempted on record with id: 3 
+2020-06-08 11:01:34.3295 INFO Books - Update: Record with id: 3 successfully updated
+2020-06-08 11:01:34.4395 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:01:34.4758 INFO Books - GetBooks: Successful
+2020-06-08 11:01:36.4009 INFO Books - GetBook: Attempted Call for id: 4
+2020-06-08 11:01:36.4332 INFO Books - GetBook: Successfully got record with id: 4
+2020-06-08 11:01:36.4736 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:01:36.5038 INFO Authors - GetAuthors: Successful
+2020-06-08 11:01:46.2488 INFO Books - Update: Update Attempted on record with id: 4 
+2020-06-08 11:01:46.2990 INFO Books - Update: Record with id: 4 successfully updated
+2020-06-08 11:01:46.4379 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:01:46.4736 INFO Books - GetBooks: Successful
+2020-06-08 11:02:10.3634 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:02:10.4092 INFO Authors - GetAuthors: Successful
+2020-06-08 11:02:14.5160 INFO Authors - GetAuthor: Attempted Call for id: 1
+2020-06-08 11:02:14.5494 INFO Authors - GetAuthor: Successfully got record with id: 1
+2020-06-08 11:02:26.8502 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:02:26.8784 INFO Authors - GetAuthors: Successful
+2020-06-08 11:02:29.4467 INFO Authors - GetAuthor: Attempted Call for id: 6
+2020-06-08 11:02:29.5179 INFO Authors - GetAuthor: Successfully got record with id: 6
+2020-06-08 11:02:35.6173 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:02:35.6486 INFO Authors - GetAuthors: Successful
+2020-06-08 11:02:42.0342 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:02:42.0664 INFO Authors - GetAuthors: Successful
+2020-06-08 11:02:43.2763 INFO Authors - GetAuthors: Attempted Call
+2020-06-08 11:02:43.3235 INFO Authors - GetAuthors: Successful
+2020-06-08 11:02:45.6907 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:02:45.7476 INFO Books - GetBooks: Successful
+2020-06-08 11:02:53.3299 INFO Books - GetBooks: Attempted Call
+2020-06-08 11:02:53.3707 INFO Books - GetBooks: Successful

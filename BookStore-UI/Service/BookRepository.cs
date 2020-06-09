@@ -14,8 +14,7 @@ namespace BookStore_UI.Service
         private readonly IHttpClientFactory _client;
         private readonly ILocalStorageService _localStorage;
 
-        public BookRepository(IHttpClientFactory client,
-            ILocalStorageService localStorage) : base(client, localStorage)
+        public BookRepository(IHttpClientFactory client, ILocalStorageService localStorage) : base(client, localStorage)
         {
             _client = client;
             _localStorage = localStorage;
